@@ -1,0 +1,69 @@
+{
+  "categories": [
+    { "id": "self", "label": "Self-Image" },
+    { "id": "morals", "label": "Morals" },
+    { "id": "chaos", "label": "Chaos" },
+    { "id": "social", "label": "Social Battery" },
+    { "id": "habits", "label": "Habits" },
+    { "id": "heart", "label": "Heart" },
+    { "id": "money", "label": "Money" },
+    { "id": "hypo", "label": "Hypotheticals" }
+  ],
+  "questions": [
+    { "id": "self-1", "cat": "self", "text": "Do they think they're the funniest person in the group?" },
+    { "id": "self-2", "cat": "self", "text": "Would they describe themselves as \"low maintenance\"... incorrectly?" },
+    { "id": "self-3", "cat": "self", "text": "Do they secretly believe they could have gone pro in something?" },
+    { "id": "self-4", "cat": "self", "text": "Would they make everyone retake the group photo?" },
+    { "id": "self-5", "cat": "self", "text": "Do they think they're a great driver?" },
+    { "id": "self-6", "cat": "self", "text": "Have they definitely googled themselves?" },
+
+    { "id": "morals-1", "cat": "morals", "text": "Would they return a found wallet with all the cash still in it?" },
+    { "id": "morals-2", "cat": "morals", "text": "Would they lie their way out of a parking ticket?" },
+    { "id": "morals-3", "cat": "morals", "text": "Would they rat out a friend to save themselves?" },
+    { "id": "morals-4", "cat": "morals", "text": "Would they cut in line if they were sure nobody would notice?" },
+    { "id": "morals-5", "cat": "morals", "text": "Would they tell you about the spinach in your teeth, every time?" },
+    { "id": "morals-6", "cat": "morals", "text": "Would they sneak snacks into the movies with zero guilt?" },
+
+    { "id": "chaos-1", "cat": "chaos", "text": "Would they say yes to a road trip leaving in an hour?" },
+    { "id": "chaos-2", "cat": "chaos", "text": "Have they ever been injured doing something they were explicitly warned about?" },
+    { "id": "chaos-3", "cat": "chaos", "text": "Would they start the dance floor while it's still empty?" },
+    { "id": "chaos-4", "cat": "chaos", "text": "Would they eat it off the floor well past five seconds?" },
+    { "id": "chaos-5", "cat": "chaos", "text": "Would they jump in the lake fully clothed on a dare?" },
+    { "id": "chaos-6", "cat": "chaos", "text": "Is their phone battery below 20% right now?" },
+
+    { "id": "social-1", "cat": "social", "text": "Do they leave parties without saying goodbye?" },
+    { "id": "social-2", "cat": "social", "text": "Are they secretly thrilled when plans get cancelled?" },
+    { "id": "social-3", "cat": "social", "text": "Do they get energy from being the center of attention?" },
+    { "id": "social-4", "cat": "social", "text": "Would they chat with a stranger on a plane by choice?" },
+    { "id": "social-5", "cat": "social", "text": "Do they need a full recovery day after a big party?" },
+    { "id": "social-6", "cat": "social", "text": "Are they usually the last one to leave the party?" },
+
+    { "id": "habits-1", "cat": "habits", "text": "Do they hit snooze more than twice?" },
+    { "id": "habits-2", "cat": "habits", "text": "Do they have thousands of unread emails?" },
+    { "id": "habits-3", "cat": "habits", "text": "Would they rewatch the same show instead of starting a new one?" },
+    { "id": "habits-4", "cat": "habits", "text": "Do they make their bed every single morning?" },
+    { "id": "habits-5", "cat": "habits", "text": "Are they chronically fifteen minutes late?" },
+    { "id": "habits-6", "cat": "habits", "text": "Do they reply to texts within five minutes?" },
+
+    { "id": "heart-1", "cat": "heart", "text": "Would they cry at a stranger's wedding?" },
+    { "id": "heart-2", "cat": "heart", "text": "Would they get back together with an ex?" },
+    { "id": "heart-3", "cat": "heart", "text": "Do they fall in love embarrassingly fast?" },
+    { "id": "heart-4", "cat": "heart", "text": "Would they make the first move?" },
+    { "id": "heart-5", "cat": "heart", "text": "Do they believe in soulmates?" },
+    { "id": "heart-6", "cat": "heart", "text": "Would they date someone all their friends disliked?" },
+
+    { "id": "money-1", "cat": "money", "text": "Would they Venmo request you for less than five dollars?" },
+    { "id": "money-2", "cat": "money", "text": "Would they splurge on fancy groceries but refuse to pay for parking?" },
+    { "id": "money-3", "cat": "money", "text": "Would they haggle at a garage sale?" },
+    { "id": "money-4", "cat": "money", "text": "Do they know their bank balance to the dollar right now?" },
+    { "id": "money-5", "cat": "money", "text": "Would they grab the whole tab just for the moment?" },
+    { "id": "money-6", "cat": "money", "text": "Would they buy a lottery ticket \"just in case\"?" },
+
+    { "id": "hypo-1", "cat": "hypo", "text": "Would they survive the first act of a horror movie?" },
+    { "id": "hypo-2", "cat": "hypo", "text": "If aliens landed, would they volunteer to go aboard?" },
+    { "id": "hypo-3", "cat": "hypo", "text": "Would you want them on your team in a zombie apocalypse?" },
+    { "id": "hypo-4", "cat": "hypo", "text": "Would they become insufferable if they got famous?" },
+    { "id": "hypo-5", "cat": "hypo", "text": "Would they use a time machine to bet on sports instead of fixing history?" },
+    { "id": "hypo-6", "cat": "hypo", "text": "Could they be talked into joining a cult, at least for a weekend?" }
+  ]
+}

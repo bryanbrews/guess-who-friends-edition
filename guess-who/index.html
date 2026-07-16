@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guess Who — Friends Edition</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Guess Who — Friends Edition">
+<meta property="og:description" content="Guess which friend — with feelings-based questions only.">
+<meta property="og:url" content="https://pacbrewlab.com/guess-who/">
+<link rel="icon" href="/assets/unicorn.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="home" href="/" aria-label="Home">&larr;</a>
+  <h1>Guess Who <span>Friends Edition</span></h1>
+  <div id="conn-pill" class="conn-pill" hidden>reconnecting&hellip;</div>
+</header>
+
+<main id="app">
+
+  <!-- ------------------------------------------------------------ lobby -->
+  <section id="screen-lobby" hidden>
+    <p class="tagline">Guess which friend your opponent picked &mdash; no
+    &ldquo;do they wear glasses&rdquo; allowed. Only questions about their soul.</p>
+
+    <div class="lobby-forms">
+      <form id="form-create" class="panel">
+        <h2>Start a game</h2>
+        <label>Your name
+          <input id="create-name" type="text" maxlength="40" autocomplete="nickname" required>
+        </label>
+        <button type="submit" class="btn primary">Create room</button>
+      </form>
+
+      <form id="form-join" class="panel">
+        <h2>Join a game</h2>
+        <label>Your name
+          <input id="join-name" type="text" maxlength="40" autocomplete="nickname" required>
+        </label>
+        <label>Room code
+          <input id="join-code" type="text" maxlength="4" autocapitalize="characters"
+                 autocomplete="off" spellcheck="false" placeholder="ABCD" required>
+        </label>
+        <button type="submit" class="btn primary">Join room</button>
+      </form>
+    </div>
+    <div class="solo-divider"><span>or</span></div>
+    <form id="form-ai" class="panel solo-panel">
+      <h2>Play solo</h2>
+      <label>Your name
+        <input id="ai-name" type="text" maxlength="40" autocomplete="nickname" required>
+      </label>
+      <button type="submit" class="btn primary">Play vs the Computer</button>
+    </form>
+    <p id="lobby-error" class="error" hidden></p>
+  </section>
+
+  <!-- ---------------------------------------------------------- waiting -->
+  <section id="screen-wait" hidden>
+    <div class="panel center">
+      <h2>Room code</h2>
+      <div id="wait-code" class="room-code">----</div>
+      <p>Send this to your opponent, or share the link:</p>
+      <button id="btn-share" class="btn">Copy invite link</button>
+      <p class="muted">Waiting for someone to join&hellip;</p>
+      <button id="btn-abandon-wait" class="btn subtle">Cancel</button>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------------- pick -->
+  <section id="screen-pick" hidden>
+    <h2 class="phase-title">Pick your secret friend</h2>
+    <p class="muted">Your opponent has to guess this person.</p>
+    <div id="pick-grid" class="board"></div>
+    <div class="actionbar">
+      <button id="btn-confirm-pick" class="btn primary" disabled>Confirm pick</button>
+    </div>
+    <p id="pick-waiting" class="muted center" hidden>Locked in. Waiting for your opponent to pick&hellip;</p>
+  </section>
+
+  <!-- ------------------------------------------------------------- game -->
+  <section id="screen-game" hidden>
+    <div class="statusbar">
+      <div id="game-status"></div>
+      <div id="secret-chip" class="secret-chip"></div>
+    </div>
+
+    <div id="board" class="board"></div>
+    <p class="hint">Tap faces to flip them down (only you see this).</p>
+    <div id="ai-flip-help" hidden>
+      <button id="btn-flip-for-me" class="btn subtle">Flip the ones that can't be right</button>
+    </div>
+
+    <div id="turn-panel" class="panel">
+      <!-- my turn: ask or guess -->
+      <div id="panel-ask" hidden>
+        <h3>Your turn — ask a question</h3>
+        <div id="q-cats" class="q-cats"></div>
+        <div id="q-list" class="q-list"></div>
+        <form id="form-freeq" class="freeq">
+          <input id="freeq-input" type="text" maxlength="300"
+                 placeholder="Or write your own yes/no question (nothing physical!)">
+          <button type="submit" class="btn">Ask</button>
+        </form>
+        <div class="or-guess">
+          <button id="btn-guess-mode" class="btn danger-outline">I'm ready to guess</button>
+          <span class="muted">wrong guess = you lose</span>
+        </div>
+      </div>
+
+      <!-- my turn: guess mode -->
+      <div id="panel-guess" hidden>
+        <h3>Tap the friend you think it is</h3>
+        <p class="muted">Careful — a wrong guess loses the game.</p>
+        <button id="btn-guess-cancel" class="btn subtle">Never mind, ask a question instead</button>
+      </div>
+
+      <!-- waiting for their answer -->
+      <div id="panel-asked" hidden>
+        <h3>Question sent</h3>
+        <p id="asked-q" class="pending-q"></p>
+        <p class="muted">Waiting for <span class="opp-name"></span> to answer&hellip;</p>
+      </div>
+
+      <!-- their question, I answer -->
+      <div id="panel-answer" hidden>
+        <h3><span class="opp-name"></span> asks, about your secret friend:</h3>
+        <p id="answer-q" class="pending-q"></p>
+        <div class="yn">
+          <button id="btn-yes" class="btn yes">YES</button>
+          <button id="btn-no" class="btn no">NO</button>
+        </div>
+      </div>
+
+      <!-- their turn, nothing pending -->
+      <div id="panel-theirs" hidden>
+        <h3>Waiting on <span class="opp-name"></span>&hellip;</h3>
+        <p class="muted">They're thinking about who you might be.</p>
+      </div>
+    </div>
+
+    <details class="history" open>
+      <summary>History</summary>
+      <ol id="log"></ol>
+    </details>
+
+    <div class="actionbar">
+      <button id="btn-forfeit" class="btn subtle">Forfeit</button>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------------- end -->
+  <section id="screen-end" hidden>
+    <div class="panel center">
+      <h2 id="end-title">Game over</h2>
+      <p id="end-detail"></p>
+      <div class="reveal">
+        <figure><img id="reveal-1" alt=""><figcaption id="reveal-cap-1"></figcaption></figure>
+        <figure><img id="reveal-2" alt=""><figcaption id="reveal-cap-2"></figcaption></figure>
+      </div>
+      <div class="end-actions">
+        <button id="btn-rematch" class="btn primary">Rematch</button>
+        <button id="btn-new-game" class="btn subtle">New game</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script type="module" src="app.js?v=3"></script>
+</body>
+</html>

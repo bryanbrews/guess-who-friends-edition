@@ -1,0 +1,13 @@
+.DS_Store
+node_modules/
+.wrangler/
+.dev.vars
+
+# Local face pipeline artifacts (your own photos never belong in git)
+/scripts/guess-who/raw_faces/
+/scripts/guess-who/.pwdata/
+
+# Generated cartoon faces are personal data — keep them out of the repo.
+# Delete the next two lines if you intend to publish your own face set.
+/guess-who/faces/*.png
+/guess-who/faces/*.jpg

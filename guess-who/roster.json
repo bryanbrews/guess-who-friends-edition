@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ava",
+    "name": "Ava",
+    "img": "faces/ava.svg"
+  },
+  {
+    "id": "ben",
+    "name": "Ben",
+    "img": "faces/ben.svg"
+  },
+  {
+    "id": "cleo",
+    "name": "Cleo",
+    "img": "faces/cleo.svg"
+  },
+  {
+    "id": "dev",
+    "name": "Dev",
+    "img": "faces/dev.svg"
+  },
+  {
+    "id": "emi",
+    "name": "Emi",
+    "img": "faces/emi.svg"
+  },
+  {
+    "id": "fox",
+    "name": "Fox",
+    "img": "faces/fox.svg"
+  },
+  {
+    "id": "gus",
+    "name": "Gus",
+    "img": "faces/gus.svg"
+  },
+  {
+    "id": "hana",
+    "name": "Hana",
+    "img": "faces/hana.svg"
+  },
+  {
+    "id": "ivy",
+    "name": "Ivy",
+    "img": "faces/ivy.svg"
+  },
+  {
+    "id": "jack",
+    "name": "Jack",
+    "img": "faces/jack.svg"
+  },
+  {
+    "id": "kai",
+    "name": "Kai",
+    "img": "faces/kai.svg"
+  },
+  {
+    "id": "lena",
+    "name": "Lena",
+    "img": "faces/lena.svg"
+  },
+  {
+    "id": "mo",
+    "name": "Mo",
+    "img": "faces/mo.svg"
+  },
+  {
+    "id": "nia",
+    "name": "Nia",
+    "img": "faces/nia.svg"
+  },
+  {
+    "id": "omar",
+    "name": "Omar",
+    "img": "faces/omar.svg"
+  },
+  {
+    "id": "pia",
+    "name": "Pia",
+    "img": "faces/pia.svg"
+  },
+  {
+    "id": "quinn",
+    "name": "Quinn",
+    "img": "faces/quinn.svg"
+  },
+  {
+    "id": "rosa",
+    "name": "Rosa",
+    "img": "faces/rosa.svg"
+  },
+  {
+    "id": "sam",
+    "name": "Sam",
+    "img": "faces/sam.svg"
+  },
+  {
+    "id": "tess",
+    "name": "Tess",
+    "img": "faces/tess.svg"
+  },
+  {
+    "id": "uma",
+    "name": "Uma",
+    "img": "faces/uma.svg"
+  },
+  {
+    "id": "vic",
+    "name": "Vic",
+    "img": "faces/vic.svg"
+  },
+  {
+    "id": "wren",
+    "name": "Wren",
+    "img": "faces/wren.svg"
+  },
+  {
+    "id": "ximena",
+    "name": "Ximena",
+    "img": "faces/ximena.svg"
+  }
+]

@@ -1,0 +1,381 @@
+/* Guess Who — Friends Edition: original-board-game homage (no Hasbro assets) */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --red: #e03c31;
+  --red-dark: #b52f27;
+  --blue: #1d4e89;
+  --blue-dark: #163a66;
+  --yellow: #ffd23f;
+  --yellow-dark: #e6b52f;
+  --cream: #fdf1d6;
+  --cream-edge: #ecdcb4;
+  --ink: #3a2a1a;
+  --body: #4c3a28;
+  --muted: #8a7961;
+  --green: #2e7d4f;
+  --paper: #f4e3c1;
+  --shadow: rgba(22, 12, 4, 0.28);
+}
+
+body {
+  font-family: 'Nunito', -apple-system, system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%, #ffe9b8, transparent 60%),
+    var(--paper);
+  color: var(--body);
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ------------------------------------------------------------------ top */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 18px 16px 6px;
+}
+.topbar .home {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+.topbar h1 {
+  font-family: 'Lilita One', system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--red);
+  letter-spacing: 0.01em;
+  text-shadow: 2px 2px 0 var(--red-dark), 3px 3px 0 rgba(0,0,0,0.15);
+}
+.topbar h1 span {
+  display: inline-block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: #fff;
+  background: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-left: 8px;
+  text-shadow: none;
+  transform: translateY(-4px);
+}
+.conn-pill {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--yellow);
+  border: 2px solid var(--yellow-dark);
+  color: var(--ink);
+  padding: 3px 12px;
+  border-radius: 999px;
+}
+
+main { max-width: 880px; margin: 0 auto; padding: 8px 16px 90px; }
+
+/* --------------------------------------------------------------- shared */
+
+h2 {
+  font-family: 'Lilita One', system-ui, sans-serif;
+  color: var(--blue);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+.phase-title { margin-top: 12px; color: var(--red); }
+.muted { color: var(--muted); font-size: 0.9rem; }
+.center { text-align: center; }
+.hint { color: var(--muted); font-size: 0.8rem; margin: 6px 2px 14px; }
+.error { color: var(--red-dark); font-weight: 700; margin-top: 12px; }
+.tagline { margin: 10px 0 22px; max-width: 46ch; font-size: 1.02rem; }
+
+.panel {
+  background: var(--cream);
+  border: 3px solid var(--cream-edge);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 6px 0 var(--cream-edge), 0 10px 22px var(--shadow);
+}
+
+.btn {
+  font: inherit;
+  font-weight: 800;
+  border: none;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 11px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.12s ease;
+}
+.btn:hover:not(:disabled) { filter: brightness(1.04); }
+.btn:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 1px 0 rgba(0,0,0,0.2); }
+.btn:disabled { opacity: 0.5; cursor: default; box-shadow: none; }
+.btn.primary { background: var(--yellow); color: var(--ink); box-shadow: 0 4px 0 var(--yellow-dark); }
+.btn.subtle { background: transparent; color: var(--muted); box-shadow: none; font-weight: 700; }
+.btn.subtle:active:not(:disabled) { transform: translateY(1px); }
+.btn.danger-outline { background: #fff; color: var(--red-dark); box-shadow: 0 4px 0 rgba(181,47,39,0.35); }
+.btn.yes { background: var(--green); color: #fff; box-shadow: 0 4px 0 #1f5c39; font-size: 1.2rem; padding: 14px 36px; }
+.btn.no  { background: var(--red); color: #fff; box-shadow: 0 4px 0 var(--red-dark); font-size: 1.2rem; padding: 14px 36px; }
+
+label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--ink); margin-bottom: 14px; }
+input[type="text"] {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 5px;
+  padding: 11px 13px;
+  border: 3px solid var(--cream-edge);
+  border-radius: 12px;
+  background: #fffdf6;
+}
+input[type="text"]:focus { outline: 3px solid var(--blue); outline-offset: -1px; border-color: transparent; }
+#join-code { text-transform: uppercase; letter-spacing: 0.3em; font-weight: 800; font-family: 'Lilita One', sans-serif; }
+
+/* ---------------------------------------------------------------- lobby */
+
+.lobby-forms { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.lobby-forms h2 { margin-bottom: 12px; }
+@media (max-width: 640px) { .lobby-forms { grid-template-columns: 1fr; } }
+
+/* -------------------------------------------------------------- waiting */
+
+.room-code {
+  font-family: 'Lilita One', system-ui, sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.18em;
+  color: var(--blue);
+  margin: 8px 0 4px;
+}
+#screen-wait .panel { max-width: 440px; margin: 30px auto; }
+#screen-wait .btn { margin: 10px 4px; }
+
+/* ------------------------------------------------------- board (the tray) */
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+  padding: 16px;
+  background: linear-gradient(180deg, var(--red) 0%, var(--red-dark) 100%);
+  border-radius: 22px;
+  box-shadow:
+    inset 0 3px 10px rgba(0,0,0,0.28),
+    inset 0 -2px 6px rgba(255,255,255,0.12),
+    0 8px 22px var(--shadow);
+}
+@media (max-width: 640px) { .board { grid-template-columns: repeat(4, 1fr); gap: 7px; padding: 11px; } }
+
+/* Each face is a cream card seated in a blue slot, flippable on its bottom hinge. */
+.face {
+  position: relative;
+  border: none;
+  border-radius: 12px;
+  background: var(--blue);
+  padding: 4px 4px 0;
+  cursor: pointer;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  perspective: 640px;
+}
+.face-inner,
+.face > img,          /* fallback if markup is flat; real inner wraps img+nm */
+.face .nm { position: relative; }
+
+/* The card itself (img + name) lives directly under .face; we 3D-rotate it. */
+.face img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 9px 9px 0 0;
+  background: var(--cream);
+  backface-visibility: hidden;
+  transition: transform 0.32s ease;
+  transform-origin: bottom center;
+}
+.face .nm {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--ink);
+  background: var(--cream);
+  padding: 4px 2px 5px;
+  border-radius: 0 0 9px 9px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  backface-visibility: hidden;
+  transition: transform 0.32s ease;
+  transform-origin: bottom center;
+}
+/* Blue card back with a subtle "?" motif, revealed as the card flaps down. */
+.face::after {
+  content: "?";
+  position: absolute;
+  inset: 4px 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lilita One', sans-serif;
+  font-size: 1.8rem;
+  color: rgba(255,255,255,0.85);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,0.14), transparent 45%),
+    linear-gradient(160deg, var(--blue) 0%, var(--blue-dark) 100%);
+  border-radius: 9px;
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+  transition: transform 0.32s ease;
+  transform-origin: bottom center;
+  opacity: 0;
+}
+.face.flipped img,
+.face.flipped .nm { transform: rotateX(-180deg); }
+.face.flipped::after { transform: rotateX(0deg); opacity: 1; }
+
+.face.selected { box-shadow: 0 0 0 4px var(--yellow), 0 0 0 6px var(--yellow-dark); }
+.face.guessable:not(.flipped):hover { box-shadow: 0 0 0 4px var(--yellow); }
+
+/* Reduced-motion: no 3D hinge, fall back to grayscale + slight squash. */
+@media (prefers-reduced-motion: reduce) {
+  .face img, .face .nm, .face::after { transition: none; }
+  .face.flipped img, .face.flipped .nm { transform: none; filter: grayscale(1) brightness(0.6) contrast(0.6); }
+  .face.flipped::after { transform: none; opacity: 0.9; font-size: 1.6rem; }
+}
+
+/* ----------------------------------------------------------------- game */
+
+.statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.secret-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink);
+  border: 2px solid var(--cream-edge);
+  background: var(--cream);
+  border-radius: 999px;
+  padding: 3px 12px 3px 4px;
+}
+.secret-chip img { width: 26px; height: 26px; border-radius: 50%; object-fit: cover; }
+
+#turn-panel { margin-top: 16px; }
+#turn-panel h3 { font-family: 'Lilita One', sans-serif; color: var(--blue); font-weight: 400; margin-bottom: 10px; font-size: 1.15rem; }
+
+.q-cats { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.q-cat {
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  border: 2px solid var(--cream-edge);
+  background: #fffdf6;
+  color: var(--body);
+  border-radius: 999px;
+  padding: 4px 13px;
+  cursor: pointer;
+}
+.q-cat.active { background: var(--blue); border-color: var(--blue-dark); color: #fff; }
+
+.q-list { display: grid; gap: 7px; max-height: 230px; overflow-y: auto; margin-bottom: 12px; }
+.q-item {
+  font: inherit;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--cream-edge);
+  background: #fff;
+  color: var(--ink);
+  border-radius: 12px;
+  padding: 10px 13px;
+  cursor: pointer;
+}
+.q-item:hover:not(:disabled) { border-color: var(--blue); }
+.q-item:disabled { opacity: 0.45; text-decoration: line-through; cursor: default; }
+
+.freeq { display: flex; gap: 8px; }
+.freeq input { flex: 1; margin-top: 0; }
+
+.or-guess { display: flex; align-items: center; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+
+.pending-q {
+  font-family: 'Lilita One', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 6px 0 10px;
+}
+.yn { display: flex; gap: 14px; margin-top: 8px; }
+
+.history { margin-top: 18px; font-size: 0.86rem; }
+.history summary { cursor: pointer; color: var(--muted); font-weight: 700; }
+.history ol { list-style: none; margin-top: 8px; display: grid; gap: 4px; }
+.history li { padding: 6px 11px; border-radius: 10px; background: var(--cream); border: 2px solid var(--cream-edge); }
+.history li .who { font-weight: 800; color: var(--blue); }
+.history li .ans-yes { color: var(--green); font-weight: 800; }
+.history li .ans-no { color: var(--red-dark); font-weight: 800; }
+
+.actionbar { display: flex; justify-content: center; gap: 10px; margin-top: 22px; }
+
+/* ------------------------------------------------------------------ end */
+
+#screen-end .panel { max-width: 500px; margin: 30px auto; text-align: center; }
+#end-title { font-family: 'Lilita One', sans-serif; font-weight: 400; font-size: 2.4rem; color: var(--red); text-shadow: 2px 2px 0 var(--red-dark); }
+.reveal { display: flex; justify-content: center; gap: 24px; margin: 20px 0; }
+.reveal figure { width: 120px; }
+.reveal img { width: 100%; border-radius: 12px; border: 3px solid var(--blue); background: var(--cream); }
+.reveal figcaption { font-size: 0.8rem; font-weight: 700; color: var(--ink); margin-top: 5px; }
+.end-actions { display: flex; justify-content: center; gap: 10px; }
+
+/* ------------------------------------------------------------- AI mode */
+
+.solo-divider { display: flex; align-items: center; gap: 12px; margin: 20px 0 16px; color: var(--muted); }
+.solo-divider::before, .solo-divider::after { content: ""; flex: 1; height: 2px; background: var(--cream-edge); }
+.solo-divider span { font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; }
+.solo-panel { max-width: 420px; margin: 0 auto; }
+
+#ai-flip-help { margin: 2px 0 12px; }
+
+.ai-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #fff;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px var(--shadow);
+  pointer-events: none;
+  z-index: 2;
+}
+.ai-badge.yes { background: var(--green); }
+.ai-badge.no  { background: var(--red-dark); }
