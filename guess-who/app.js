@@ -102,6 +102,7 @@ async function poll() {
   pollBackoff = 0;
   if (res.body && res.body.state) {
     // full state (something changed)
+    if (!boardResolvable(res.body.board)) { abandonStaleGame(); return; }
     state = res.body;
     render();
   }
@@ -223,6 +224,18 @@ function faceButton(person, { onTap }) {
 
 function boardPeople() {
   return state.board.map((id) => rosterById.get(id)).filter(Boolean);
+}
+
+// A resumed game whose board references ids missing from the current roster
+// (e.g. it was created before the face set changed) can never render — drop it.
+function boardResolvable(board) {
+  return Array.isArray(board) && board.length > 0 && board.every((id) => rosterById.has(id));
+}
+
+function abandonStaleGame() {
+  clearSession();
+  render();
+  showLobbyError("That game used an older set of faces. Start a new game to play with the current ones.");
 }
 
 function renderPick() {
@@ -572,7 +585,7 @@ async function init() {
 
   if (session && session.mode === "ai") {
     aiGame = loadJSON("gw:ai");
-    if (!aiGame || aiGame.mode !== "ai" || !Array.isArray(aiGame.board) || !aiGame.ai) {
+    if (!aiGame || aiGame.mode !== "ai" || !Array.isArray(aiGame.board) || !aiGame.ai || !boardResolvable(aiGame.board)) {
       clearSession();
       render();
     } else {
