@@ -14,6 +14,31 @@ built-in opponent.
 > to be played with cartoon portraits of your *own* friend group — see
 > [Making your own faces](#making-your-own-faces).
 
+![The game board with placeholder faces, mid-match](docs/screenshot.png)
+
+## How to play
+
+1. **Start a game.** Enter your name and either create a room (share the 4-letter
+   code with a friend) or join theirs. No friend around? Hit **Play vs the
+   Computer**.
+2. **Pick your secret friend.** You each secretly choose one person from the
+   shared board of 24. Your opponent has to figure out who *you* picked.
+3. **Take turns asking.** On your turn, ask one yes/no question about
+   personality — pick from the deck or write your own. The only rule: **nothing
+   physical.** No hair, no glasses, no height. Only questions about who they
+   *are*.
+4. **Answer honestly.** When it's the other player's question, tap **YES** or
+   **NO** based on your secret friend. It's subjective and that's the fun.
+5. **Narrow it down.** Tap faces to flip them down as you rule people out. Only
+   you can see your own flipped board.
+6. **Make your guess.** When you think you know, switch to guess mode and tap
+   their friend. **Guess right and you win — guess wrong and you lose.** So be
+   sure before you commit.
+
+First to correctly guess the other player's secret friend wins. A wrong guess or
+a forfeit hands the win to your opponent. Want a rematch? Same friends, same
+board, fresh secrets.
+
 ## How it works
 
 - **Frontend** (`guess-who/`) — vanilla HTML/CSS/JS, no build step. A single
