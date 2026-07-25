@@ -1,4 +1,4 @@
-// estimator.js — pure valuation logic for ImmoPreis. No DOM, no fetch.
+// estimator.js — pure valuation logic for Gillow. No DOM, no fetch.
 //
 // The model is a classic hedonic-style adjustment chain on top of two anchors:
 //   1. official  — average transaction prices from the local Gutachterausschuss

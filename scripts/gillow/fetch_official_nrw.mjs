@@ -14,7 +14,7 @@
 // build_dataset.mjs. With --trend it also downloads the previous year and
 // derives the state-wide year-over-year price change.
 //
-// Usage: node scripts/immopreis/fetch_official_nrw.mjs [--trend] [--min-samples N]
+// Usage: node scripts/gillow/fetch_official_nrw.mjs [--trend] [--min-samples N]
 
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -127,7 +127,7 @@ const slug = (name) =>
 async function loadYear(zipName) {
   const url = `${BASE}/${zipName}`;
   console.log(`downloading ${url} …`);
-  const res = await fetch(url, { headers: { "User-Agent": "immopreis-aggregator/1.0" } });
+  const res = await fetch(url, { headers: { "User-Agent": "gillow-aggregator/1.0" } });
   if (!res.ok) throw new Error(`${url} → HTTP ${res.status}`);
   const files = await unzip(new Uint8Array(await res.arrayBuffer()));
   const pick = (want) => {
@@ -208,4 +208,4 @@ console.log(
   `wrote sources/official_nrw.json — ${Object.keys(cities).length} municipalities ` +
     `(reporting year ${berichtsjahr}; ${skippedThin} skipped with <${MIN_SAMPLES} sales)`
 );
-console.log("Now run: node scripts/immopreis/build_dataset.mjs");
+console.log("Now run: node scripts/gillow/build_dataset.mjs");

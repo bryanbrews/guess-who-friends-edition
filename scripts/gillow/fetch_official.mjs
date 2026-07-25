@@ -15,7 +15,7 @@
 // Output: sources/official.json (picked up by build_dataset.mjs, overriding
 // official_seed.json).
 //
-// Usage: [GENESIS_TOKEN=…] node scripts/immopreis/fetch_official.mjs
+// Usage: [GENESIS_TOKEN=…] node scripts/gillow/fetch_official.mjs
 
 import { readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -54,7 +54,7 @@ async function fetchYoy(token) {
     "https://www-genesis.destatis.de/genesisWS/rest/2020/data/tablefile" +
     `?username=${encodeURIComponent(token)}&password=&name=61262-0001` +
     "&area=all&format=ffcsv&language=de";
-  const res = await fetch(url, { headers: { "User-Agent": "immopreis-aggregator/1.0" } });
+  const res = await fetch(url, { headers: { "User-Agent": "gillow-aggregator/1.0" } });
   if (!res.ok) throw new Error(`GENESIS HTTP ${res.status}`);
   const csv = await res.text();
   // ffcsv: one row per year/quarter with the index value in the last column.
@@ -104,4 +104,4 @@ console.log(
 );
 console.log("\nAnnual refresh checklist — official market reports per state:");
 for (const [code, url] of Object.entries(PORTALS)) console.log(`  ${code.padEnd(8)} ${url}`);
-console.log("\nNow run: node scripts/immopreis/build_dataset.mjs");
+console.log("\nNow run: node scripts/gillow/build_dataset.mjs");
