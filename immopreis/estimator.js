@@ -94,10 +94,17 @@ export function estimate(market, input) {
   const listingAsk = area.listing?.[type];
   const listingNet = listingAsk ? listingAsk * (1 - askingDiscount) : null;
   const official = area.kind === "city" ? area.official?.[type] : null;
+  // Some official sources report new-build transaction averages separately —
+  // for a first-occupancy estimate that beats applying a generic premium.
+  const isNew = input.condition === "first_occupancy";
+  const officialNew = area.kind === "city" ? area.official?.[`${type}New`] : null;
 
   let base;
   let confidence;
-  if (official && listingNet) {
+  if (isNew && officialNew) {
+    base = officialNew;
+    confidence = "high";
+  } else if (official && listingNet) {
     base = 0.55 * official + 0.45 * listingNet;
     confidence = "high";
   } else if (official) {
@@ -112,10 +119,10 @@ export function estimate(market, input) {
 
   const condition = CONDITION_FACTORS[input.condition] ?? 1.0;
   // First occupancy means new-build pricing; the build-year band would double
-  // count the premium, so it is skipped in that case.
-  const isNew = input.condition === "first_occupancy";
+  // count the premium, so it is skipped in that case. When the base already
+  // IS a new-build transaction average, the premium factor is skipped too.
   const factors = {
-    condition: isNew ? newBuildFactor : condition,
+    condition: isNew ? (officialNew ? 1.0 : newBuildFactor) : condition,
     location: LOCATION_FACTORS[input.location] ?? 1.0,
     buildYear: isNew ? 1.0 : yearFactor(Number(input.buildYear)),
     size: sizeFactor(type, sizeSqm),
@@ -144,6 +151,7 @@ export function estimate(market, input) {
       listingAsk: listingAsk ? Math.round(listingAsk) : null,
       listingNet: listingNet ? Math.round(listingNet) : null,
       official: official ? Math.round(official) : null,
+      officialNewUsed: Boolean(isNew && officialNew),
       askingDiscount,
       factors,
     },

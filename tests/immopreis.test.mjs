@@ -110,6 +110,33 @@ test("year factor bands: Altbau premium, 1960s discount, new-build premium", () 
   assert.equal(yearFactor(NaN), 1);
 });
 
+test("NRW open data is merged: real transaction averages with sample counts", () => {
+  const koeln = market.cities.koeln;
+  assert.ok(koeln.official.apartment > 2000 && koeln.official.apartment < 8000);
+  assert.ok(koeln.official.samples.apartment > 100);
+  assert.match(koeln.officialSource, /opengeodata\.nrw/);
+});
+
+test("official-only NRW municipalities estimate with medium confidence", () => {
+  const r = estimate(market, { ...baseInput, areaKey: "krefeld" });
+  assert.ok(r);
+  assert.equal(r.confidence, "medium");
+  assert.equal(r.breakdown.listingAsk, null);
+  assert.ok(r.mid > 50_000);
+});
+
+test("first occupancy uses the official new-build average when available", () => {
+  const r = estimate(market, {
+    ...baseInput,
+    areaKey: "koeln",
+    condition: "first_occupancy",
+    buildYear: 2026,
+  });
+  assert.equal(r.breakdown.officialNewUsed, true);
+  assert.equal(r.breakdown.factors.condition, 1.0);
+  assert.equal(r.areaAvgSqm, market.cities.koeln.official.apartmentNew);
+});
+
 test("resolveArea distinguishes cities from states", () => {
   assert.equal(resolveArea(market, "muenchen").kind, "city");
   assert.equal(resolveArea(market, "state:BY").kind, "state");

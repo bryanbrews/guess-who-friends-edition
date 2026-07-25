@@ -6,6 +6,10 @@
 //   sources/listings.json        output of fetch_listings.mjs (optional)
 //   sources/official_seed.json   hand-curated Gutachterausschuss figures
 //   sources/official.json        output of fetch_official.mjs (optional)
+//   sources/official_nrw.json    output of fetch_official_nrw.mjs — real
+//                                open-data transaction averages for all NRW
+//                                municipalities; also adds official-only
+//                                cities that have no listing seed
 //
 // Usage: node scripts/immopreis/build_dataset.mjs
 
@@ -63,6 +67,24 @@ for (const [key, seed] of Object.entries(officialSeed.cities)) {
   cities[key].officialSource = merged.source ?? "Gutachterausschuss market report";
 }
 
+// NRW open data (highest priority): real sale-register aggregates. Cities not
+// in any listing source still become entries — the estimator handles
+// official-only areas.
+const officialNrw = await readOptional("official_nrw.json");
+for (const [key, nrw] of Object.entries(officialNrw?.cities ?? {})) {
+  if (!cities[key]) {
+    cities[key] = { name: nrw.name, state: nrw.state, listing: null, listingSource: null };
+  }
+  cities[key].official = {
+    apartment: nrw.apartment ?? null,
+    house: nrw.house ?? null,
+    apartmentNew: nrw.apartmentNew ?? null,
+    samples: { apartment: nrw.apartmentSamples ?? null, house: nrw.houseSamples ?? null },
+    year: officialNrw.berichtsjahr,
+  };
+  cities[key].officialSource = nrw.source;
+}
+
 const states = {};
 for (const [code, s] of Object.entries(listingsSeed.states)) {
   states[code] = {
@@ -83,7 +105,9 @@ const market = {
   notes: {
     listings: listingsSeed.comment,
     official: officialSeed.comment,
-    trend: officialSeed.index.source,
+    trend: officialNrw?.trend
+      ? `${officialSeed.index.source}; NRW open data: ${(officialNrw.trend.yoy * 100).toFixed(1)}% (${officialNrw.trend.basis})`
+      : officialSeed.index.source,
   },
   cities,
   states,

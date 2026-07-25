@@ -73,14 +73,16 @@ $("estimate-form").addEventListener("submit", (e) => {
 
   const b = result.breakdown;
   const rows = [];
-  if (b.official)
+  if (b.officialNewUsed)
+    rows.push(["Official new-build transaction average (Gutachterausschuss)", `${eur(result.areaAvgSqm)}/m²`]);
+  if (b.official && !b.officialNewUsed)
     rows.push(["Official transaction average (Gutachterausschuss)", `${eur(b.official)}/m²`]);
-  if (b.listingAsk)
+  if (!b.officialNewUsed && b.listingAsk)
     rows.push([
       `Listing asking average, −${Math.round(b.askingDiscount * 100)}% to transaction level`,
       `${eur(b.listingAsk)}/m² → ${eur(b.listingNet)}/m²`,
     ]);
-  rows.push(["Blended base", `${eur(result.areaAvgSqm)}/m²`]);
+  if (!b.officialNewUsed) rows.push(["Blended base", `${eur(result.areaAvgSqm)}/m²`]);
   for (const [key, value] of Object.entries(b.factors)) {
     if (Math.abs(value - 1) < 0.001) continue;
     rows.push([FACTOR_LABELS[key] ?? key, `× ${value.toFixed(2)}`]);
@@ -91,7 +93,13 @@ $("estimate-form").addEventListener("submit", (e) => {
     .join("");
 
   const src = [];
-  if (result.area.officialSource) src.push(`Official data: ${result.area.officialSource}.`);
+  if (result.area.officialSource) {
+    const o = result.area.official ?? {};
+    const type = document.querySelector('input[name="type"]:checked').value;
+    const n = o.samples?.[type];
+    const detail = n ? ` — based on ${n.toLocaleString("de-DE")} notarized sales in ${o.year}` : "";
+    src.push(`Official data: ${result.area.officialSource}${detail}.`);
+  }
   if (result.area.listingSource) src.push(`Listing data: ${result.area.listingSource}.`);
   $("sources-note").textContent = src.join(" ");
 

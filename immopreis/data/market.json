@@ -9,7 +9,7 @@
   "notes": {
     "listings": "Seed asking-price data (EUR per m2, existing stock) per city, approximate 2025-H1 market level. Values are hand-curated placeholders — refresh with real feeds via fetch_listings.mjs, which writes listings.json and overrides this file city-by-city.",
     "official": "Seed figures anchored to official transaction data: the Gutachterausschüsse (local appraisal committees) publish yearly Immobilienmarktberichte with average purchase prices from the Kaufpreissammlung (the register of all notarized sales). These are approximate values read from the latest public market reports — refresh via fetch_official.mjs, which writes official.json and overrides this file.",
-    "trend": "Statistisches Bundesamt (Destatis), Häuserpreisindex"
+    "trend": "Statistisches Bundesamt (Destatis), Häuserpreisindex; NRW open data: -0.3% (NRW condo resales, 2023→2024)"
   },
   "cities": {
     "muenchen": {
@@ -91,10 +91,16 @@
       },
       "listingSource": "seed (approximate)",
       "official": {
-        "apartment": 4300,
-        "house": null
+        "apartment": 4038,
+        "house": 5119,
+        "apartmentNew": 7358,
+        "samples": {
+          "apartment": 1305,
+          "house": 187
+        },
+        "year": "2024"
       },
-      "officialSource": "Gutachterausschuss Düsseldorf via BORIS-NRW (boris.nrw.de)"
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "koeln": {
       "name": "Köln",
@@ -105,10 +111,16 @@
       },
       "listingSource": "seed (approximate)",
       "official": {
-        "apartment": 4300,
-        "house": null
+        "apartment": 4171,
+        "house": 4346,
+        "apartmentNew": 6740,
+        "samples": {
+          "apartment": 1067,
+          "house": 642
+        },
+        "year": "2024"
       },
-      "officialSource": "Gutachterausschuss Köln via BORIS-NRW (boris.nrw.de)"
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "bonn": {
       "name": "Bonn",
@@ -117,7 +129,18 @@
         "apartment": 4100,
         "house": 4000
       },
-      "listingSource": "seed (approximate)"
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 3155,
+        "house": 4042,
+        "apartmentNew": 5530,
+        "samples": {
+          "apartment": 448,
+          "house": 198
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "muenster": {
       "name": "Münster",
@@ -126,7 +149,18 @@
         "apartment": 4200,
         "house": 3900
       },
-      "listingSource": "seed (approximate)"
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 3880,
+        "house": 3722,
+        "apartmentNew": 6099,
+        "samples": {
+          "apartment": 244,
+          "house": 149
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "aachen": {
       "name": "Aachen",
@@ -135,7 +169,18 @@
         "apartment": 3300,
         "house": 3200
       },
-      "listingSource": "seed (approximate)"
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 2830,
+        "house": 3276,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 132,
+          "house": 159
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "bielefeld": {
       "name": "Bielefeld",
@@ -144,7 +189,18 @@
         "apartment": 2800,
         "house": 2900
       },
-      "listingSource": "seed (approximate)"
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 2228,
+        "house": 439806,
+        "apartmentNew": 4230,
+        "samples": {
+          "apartment": 148,
+          "house": 746
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "essen": {
       "name": "Essen",
@@ -153,7 +209,18 @@
         "apartment": 2500,
         "house": 2900
       },
-      "listingSource": "seed (approximate)"
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 2083,
+        "house": 2974,
+        "apartmentNew": 4697,
+        "samples": {
+          "apartment": 372,
+          "house": 178
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "dortmund": {
       "name": "Dortmund",
@@ -162,7 +229,18 @@
         "apartment": 2500,
         "house": 2800
       },
-      "listingSource": "seed (approximate)"
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 2830,
+        "house": 2992,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 2830,
+          "house": 240
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "bochum": {
       "name": "Bochum",
@@ -171,7 +249,18 @@
         "apartment": 2400,
         "house": 2700
       },
-      "listingSource": "seed (approximate)"
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 2080,
+        "house": 2863,
+        "apartmentNew": 4960,
+        "samples": {
+          "apartment": 505,
+          "house": 267
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "wuppertal": {
       "name": "Wuppertal",
@@ -180,7 +269,18 @@
         "apartment": 2300,
         "house": 2600
       },
-      "listingSource": "seed (approximate)"
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 1950,
+        "house": 3323,
+        "apartmentNew": 4310,
+        "samples": {
+          "apartment": 327,
+          "house": 261
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "duisburg": {
       "name": "Duisburg",
@@ -189,7 +289,18 @@
         "apartment": 1900,
         "house": 2300
       },
-      "listingSource": "seed (approximate)"
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 1662,
+        "house": 2534,
+        "apartmentNew": 4220,
+        "samples": {
+          "apartment": 400,
+          "house": 401
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     },
     "leipzig": {
       "name": "Leipzig",
@@ -538,6 +649,4409 @@
         "house": 4700
       },
       "listingSource": "seed (approximate)"
+    },
+    "krefeld": {
+      "name": "Krefeld",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2173,
+        "house": 2879,
+        "apartmentNew": 4930,
+        "samples": {
+          "apartment": 77,
+          "house": 135
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "moenchengladbach": {
+      "name": "Mönchengladbach",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2026,
+        "house": 3639,
+        "apartmentNew": 4400,
+        "samples": {
+          "apartment": 420,
+          "house": 326
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "muelheimanderruhr": {
+      "name": "Mülheim an der Ruhr",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2219,
+        "house": 3088,
+        "apartmentNew": 4910,
+        "samples": {
+          "apartment": 116,
+          "house": 103
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "oberhausen": {
+      "name": "Oberhausen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2073,
+        "house": 2787,
+        "apartmentNew": 4110,
+        "samples": {
+          "apartment": 45,
+          "house": 34
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "remscheid": {
+      "name": "Remscheid",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1658,
+        "house": 2317,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 89,
+          "house": 89
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "solingen": {
+      "name": "Solingen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2198,
+        "house": 2771,
+        "apartmentNew": 4329,
+        "samples": {
+          "apartment": 272,
+          "house": 391
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "emmerichamrhein": {
+      "name": "Emmerich am Rhein",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1966,
+        "house": 2342,
+        "apartmentNew": 3270,
+        "samples": {
+          "apartment": 10,
+          "house": 37
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "geldern": {
+      "name": "Geldern",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2355,
+        "apartmentNew": 4020,
+        "samples": {
+          "apartment": null,
+          "house": 31
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "goch": {
+      "name": "Goch",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2429,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 34
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kevelaer": {
+      "name": "Kevelaer",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1793,
+        "house": 2090,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 12,
+          "house": 21
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kleve": {
+      "name": "Kleve",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2090,
+        "house": 2236,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 18,
+          "house": 52
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kranenburg": {
+      "name": "Kranenburg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2938,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 15
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "erkrath": {
+      "name": "Erkrath",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 3301,
+        "apartmentNew": 5110,
+        "samples": {
+          "apartment": null,
+          "house": 50
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "haan": {
+      "name": "Haan",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 3333,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 23
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "heiligenhaus": {
+      "name": "Heiligenhaus",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2097,
+        "house": 2727,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 10,
+          "house": 32
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hilden": {
+      "name": "Hilden",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2974,
+        "house": 3595,
+        "apartmentNew": 5480,
+        "samples": {
+          "apartment": 18,
+          "house": 26
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "langenfeldrhld": {
+      "name": "Langenfeld (Rhld.)",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 3584,
+        "apartmentNew": 5270,
+        "samples": {
+          "apartment": null,
+          "house": 83
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "mettmann": {
+      "name": "Mettmann",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 3397,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 47
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "monheimamrhein": {
+      "name": "Monheim am Rhein",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 3719,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 44
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "ratingen": {
+      "name": "Ratingen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2765,
+        "house": 3908,
+        "apartmentNew": 5460,
+        "samples": {
+          "apartment": 302,
+          "house": 104
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "velbert": {
+      "name": "Velbert",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1827,
+        "house": 2567,
+        "apartmentNew": 3550,
+        "samples": {
+          "apartment": 63,
+          "house": 48
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wuelfrath": {
+      "name": "Wülfrath",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2825,
+        "apartmentNew": 4190,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "dormagen": {
+      "name": "Dormagen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2561,
+        "house": 3051,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 21,
+          "house": 25
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "grevenbroich": {
+      "name": "Grevenbroich",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2471,
+        "house": 2534,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 26,
+          "house": 39
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "juechen": {
+      "name": "Jüchen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 3236,
+        "apartmentNew": 4720,
+        "samples": {
+          "apartment": null,
+          "house": 26
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kaarst": {
+      "name": "Kaarst",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 3022,
+        "house": 3225,
+        "apartmentNew": 5120,
+        "samples": {
+          "apartment": 24,
+          "house": 46
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "korschenbroich": {
+      "name": "Korschenbroich",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2310,
+        "house": 3232,
+        "apartmentNew": 4870,
+        "samples": {
+          "apartment": 22,
+          "house": 23
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "meerbusch": {
+      "name": "Meerbusch",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 3133,
+        "house": 3694,
+        "apartmentNew": 5960,
+        "samples": {
+          "apartment": 22,
+          "house": 34
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "neuss": {
+      "name": "Neuss",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2657,
+        "house": 3634,
+        "apartmentNew": 4940,
+        "samples": {
+          "apartment": 265,
+          "house": 85
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "rommerskirchen": {
+      "name": "Rommerskirchen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2137,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 10
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "brueggen": {
+      "name": "Brüggen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1844,
+        "house": 2563,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 10,
+          "house": 22
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "grefrath": {
+      "name": "Grefrath",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2290,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 24
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kempen": {
+      "name": "Kempen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2119,
+        "house": 3119,
+        "apartmentNew": 4975,
+        "samples": {
+          "apartment": 47,
+          "house": 57
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "nettetal": {
+      "name": "Nettetal",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1613,
+        "house": 2537,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 16,
+          "house": 48
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "niederkruechten": {
+      "name": "Niederkrüchten",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2379,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 28
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "schwalmtal": {
+      "name": "Schwalmtal",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2652,
+        "apartmentNew": 4620,
+        "samples": {
+          "apartment": null,
+          "house": 45
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "toenisvorst": {
+      "name": "Tönisvorst",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2178,
+        "house": 2874,
+        "apartmentNew": 4450,
+        "samples": {
+          "apartment": 20,
+          "house": 63
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "viersen": {
+      "name": "Viersen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2371,
+        "house": 3163,
+        "apartmentNew": 4860,
+        "samples": {
+          "apartment": 39,
+          "house": 91
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "willich": {
+      "name": "Willich",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1986,
+        "house": 2232,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 77,
+          "house": 106
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "dinslaken": {
+      "name": "Dinslaken",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2277,
+        "house": 2780,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 63,
+          "house": 92
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "moers": {
+      "name": "Moers",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2135,
+        "house": 2861,
+        "apartmentNew": 4140,
+        "samples": {
+          "apartment": 96,
+          "house": 135
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wesel": {
+      "name": "Wesel",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1683,
+        "house": 2397,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 44,
+          "house": 100
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "leverkusen": {
+      "name": "Leverkusen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2619,
+        "house": 2915,
+        "apartmentNew": 5265,
+        "samples": {
+          "apartment": 92,
+          "house": 83
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "alsdorf": {
+      "name": "Alsdorf",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2056,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 72
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "baesweiler": {
+      "name": "Baesweiler",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2034,
+        "house": 2273,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 12,
+          "house": 26
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "eschweiler": {
+      "name": "Eschweiler",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1937,
+        "house": 2121,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 12,
+          "house": 66
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "herzogenrath": {
+      "name": "Herzogenrath",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2410,
+        "house": 2467,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 16,
+          "house": 53
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "stolbergrhld": {
+      "name": "Stolberg (Rhld.)",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2021,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 48
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wuerselen": {
+      "name": "Würselen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2320,
+        "house": 2598,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 23,
+          "house": 35
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "dueren": {
+      "name": "Düren",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1731,
+        "house": null,
+        "apartmentNew": 3176,
+        "samples": {
+          "apartment": 212,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "juelich": {
+      "name": "Jülich",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2725,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 10
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "bedburg": {
+      "name": "Bedburg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2000,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 18
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "bergheim": {
+      "name": "Bergheim",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1948,
+        "house": 2514,
+        "apartmentNew": 5230,
+        "samples": {
+          "apartment": 36,
+          "house": 37
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "bruehl": {
+      "name": "Brühl",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 3873,
+        "house": 3000,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 84,
+          "house": 20
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "elsdorf": {
+      "name": "Elsdorf",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2438,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 16
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "erftstadt": {
+      "name": "Erftstadt",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2093,
+        "house": 2324,
+        "apartmentNew": 5020,
+        "samples": {
+          "apartment": 21,
+          "house": 74
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "frechen": {
+      "name": "Frechen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 3276,
+        "house": 3611,
+        "apartmentNew": 4870,
+        "samples": {
+          "apartment": 33,
+          "house": 18
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "huerth": {
+      "name": "Hürth",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 3366,
+        "house": 3579,
+        "apartmentNew": 6200,
+        "samples": {
+          "apartment": 39,
+          "house": 19
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kerpen": {
+      "name": "Kerpen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2405,
+        "house": 2783,
+        "apartmentNew": 4770,
+        "samples": {
+          "apartment": 60,
+          "house": 60
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "pulheim": {
+      "name": "Pulheim",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 3293,
+        "house": 3600,
+        "apartmentNew": 6640,
+        "samples": {
+          "apartment": 31,
+          "house": 65
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wesseling": {
+      "name": "Wesseling",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2700,
+        "house": 3400,
+        "apartmentNew": 4860,
+        "samples": {
+          "apartment": 15,
+          "house": 15
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "euskirchen": {
+      "name": "Euskirchen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1958,
+        "house": null,
+        "apartmentNew": 4010,
+        "samples": {
+          "apartment": 64,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "mechernich": {
+      "name": "Mechernich",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2127,
+        "house": null,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 13,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "erkelenz": {
+      "name": "Erkelenz",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2175,
+        "house": null,
+        "apartmentNew": 3610,
+        "samples": {
+          "apartment": 123,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "geilenkirchen": {
+      "name": "Geilenkirchen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1629,
+        "house": null,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 35,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "heinsberg": {
+      "name": "Heinsberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1809,
+        "house": null,
+        "apartmentNew": 3210,
+        "samples": {
+          "apartment": 58,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hueckelhoven": {
+      "name": "Hückelhoven",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1760,
+        "house": null,
+        "apartmentNew": 3000,
+        "samples": {
+          "apartment": 60,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "uebachpalenberg": {
+      "name": "Übach-Palenberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1531,
+        "house": null,
+        "apartmentNew": 2890,
+        "samples": {
+          "apartment": 30,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wassenberg": {
+      "name": "Wassenberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1718,
+        "house": null,
+        "apartmentNew": 3440,
+        "samples": {
+          "apartment": 26,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wegberg": {
+      "name": "Wegberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1625,
+        "house": null,
+        "apartmentNew": 3250,
+        "samples": {
+          "apartment": 59,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "engelskirchen": {
+      "name": "Engelskirchen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1832,
+        "house": 2288,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 10,
+          "house": 15
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "gummersbach": {
+      "name": "Gummersbach",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1786,
+        "house": 1963,
+        "apartmentNew": 3680,
+        "samples": {
+          "apartment": 25,
+          "house": 47
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "lindlar": {
+      "name": "Lindlar",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2725,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 11
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "marienheide": {
+      "name": "Marienheide",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1366,
+        "house": null,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 11,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "radevormwald": {
+      "name": "Radevormwald",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1654,
+        "house": null,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 13,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "waldbroel": {
+      "name": "Waldbröl",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1810,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 12
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wiehl": {
+      "name": "Wiehl",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2078,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "bergischgladbach": {
+      "name": "Bergisch Gladbach",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2870,
+        "house": 3562,
+        "apartmentNew": 5160,
+        "samples": {
+          "apartment": 103,
+          "house": 152
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "burscheid": {
+      "name": "Burscheid",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2995,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kuerten": {
+      "name": "Kürten",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2869,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 25
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "leichlingenrhld": {
+      "name": "Leichlingen (Rhld.)",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2866,
+        "house": 3295,
+        "apartmentNew": 5450,
+        "samples": {
+          "apartment": 34,
+          "house": 27
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "odenthal": {
+      "name": "Odenthal",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 3153,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 11
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "overath": {
+      "name": "Overath",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2712,
+        "apartmentNew": 5630,
+        "samples": {
+          "apartment": null,
+          "house": 38
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "roesrath": {
+      "name": "Rösrath",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2383,
+        "house": 3396,
+        "apartmentNew": 5410,
+        "samples": {
+          "apartment": 12,
+          "house": 45
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wermelskirchen": {
+      "name": "Wermelskirchen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2093,
+        "house": 2595,
+        "apartmentNew": 4060,
+        "samples": {
+          "apartment": 15,
+          "house": 24
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "alfter": {
+      "name": "Alfter",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2410,
+        "house": 3135,
+        "apartmentNew": 5285,
+        "samples": {
+          "apartment": 11,
+          "house": 21
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "badhonnef": {
+      "name": "Bad Honnef",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2909,
+        "house": 2761,
+        "apartmentNew": 5055,
+        "samples": {
+          "apartment": 21,
+          "house": 16
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "bornheim": {
+      "name": "Bornheim",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2833,
+        "house": 3093,
+        "apartmentNew": 4845,
+        "samples": {
+          "apartment": 13,
+          "house": 39
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "eitorf": {
+      "name": "Eitorf",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2104,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 23
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hennefsieg": {
+      "name": "Hennef (Sieg)",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2845,
+        "house": 2886,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 21,
+          "house": 87
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "koenigswinter": {
+      "name": "Königswinter",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2995,
+        "house": 2937,
+        "apartmentNew": 4845,
+        "samples": {
+          "apartment": 22,
+          "house": 38
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "lohmar": {
+      "name": "Lohmar",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2478,
+        "house": 2796,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 11,
+          "house": 38
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "meckenheim": {
+      "name": "Meckenheim",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1934,
+        "house": 2719,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 25,
+          "house": 61
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "much": {
+      "name": "Much",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2693,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "neunkirchenseelscheid": {
+      "name": "Neunkirchen-Seelscheid",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2627,
+        "apartmentNew": 4400,
+        "samples": {
+          "apartment": null,
+          "house": 32
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "niederkassel": {
+      "name": "Niederkassel",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 3277,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 69
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "rheinbach": {
+      "name": "Rheinbach",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2345,
+        "house": 2837,
+        "apartmentNew": 5395,
+        "samples": {
+          "apartment": 12,
+          "house": 33
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "sanktaugustin": {
+      "name": "Sankt Augustin",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 3027,
+        "house": 3143,
+        "apartmentNew": 5265,
+        "samples": {
+          "apartment": 32,
+          "house": 99
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "siegburg": {
+      "name": "Siegburg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2898,
+        "house": 3047,
+        "apartmentNew": 5405,
+        "samples": {
+          "apartment": 26,
+          "house": 34
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "swisttal": {
+      "name": "Swisttal",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2936,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 39
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "troisdorf": {
+      "name": "Troisdorf",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2740,
+        "house": 3087,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 42,
+          "house": 71
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wachtberg": {
+      "name": "Wachtberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 3376,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 30
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "windeck": {
+      "name": "Windeck",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1673,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 38
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "bottrop": {
+      "name": "Bottrop",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2133,
+        "house": 2535,
+        "apartmentNew": 4990,
+        "samples": {
+          "apartment": 76,
+          "house": 70
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "gelsenkirchen": {
+      "name": "Gelsenkirchen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1525,
+        "house": 2547,
+        "apartmentNew": 3550,
+        "samples": {
+          "apartment": 176,
+          "house": 87
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "ahaus": {
+      "name": "Ahaus",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2160,
+        "apartmentNew": 3880,
+        "samples": {
+          "apartment": null,
+          "house": 39
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "bocholt": {
+      "name": "Bocholt",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2452,
+        "house": 2389,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 39,
+          "house": 112
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "borken": {
+      "name": "Borken",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2688,
+        "house": 2413,
+        "apartmentNew": 4000,
+        "samples": {
+          "apartment": 17,
+          "house": 39
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "gescher": {
+      "name": "Gescher",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2185,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 11
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "gronauwestf": {
+      "name": "Gronau (Westf.)",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2334,
+        "house": 2176,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 12,
+          "house": 66
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "reken": {
+      "name": "Reken",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2394,
+        "apartmentNew": 3700,
+        "samples": {
+          "apartment": null,
+          "house": 18
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "rhede": {
+      "name": "Rhede",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2081,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 11
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "stadtlohn": {
+      "name": "Stadtlohn",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2029,
+        "apartmentNew": 3510,
+        "samples": {
+          "apartment": null,
+          "house": 19
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "vreden": {
+      "name": "Vreden",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2091,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 18
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "ascheberg": {
+      "name": "Ascheberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2747,
+        "apartmentNew": 4450,
+        "samples": {
+          "apartment": null,
+          "house": 14
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "billerbeck": {
+      "name": "Billerbeck",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2476,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 12
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "coesfeld": {
+      "name": "Coesfeld",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2456,
+        "house": 2495,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 23,
+          "house": 41
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "duelmen": {
+      "name": "Dülmen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2487,
+        "house": 2468,
+        "apartmentNew": 3880,
+        "samples": {
+          "apartment": 17,
+          "house": 36
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "luedinghausen": {
+      "name": "Lüdinghausen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2512,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 10
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "nottuln": {
+      "name": "Nottuln",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2777,
+        "apartmentNew": 4380,
+        "samples": {
+          "apartment": null,
+          "house": 23
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "senden": {
+      "name": "Senden",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1711,
+        "house": 2930,
+        "apartmentNew": 4940,
+        "samples": {
+          "apartment": 13,
+          "house": 24
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "castroprauxel": {
+      "name": "Castrop-Rauxel",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2578,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 235
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "datteln": {
+      "name": "Datteln",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2421,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 235
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "dorsten": {
+      "name": "Dorsten",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1622,
+        "house": 2310,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 54,
+          "house": 82
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "gladbeck": {
+      "name": "Gladbeck",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1607,
+        "house": 2397,
+        "apartmentNew": 3430,
+        "samples": {
+          "apartment": 71,
+          "house": 40
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "halternamsee": {
+      "name": "Haltern am See",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2834,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 235
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "herten": {
+      "name": "Herten",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2567,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 235
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "marl": {
+      "name": "Marl",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1837,
+        "house": 2255,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 68,
+          "house": 77
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "oererkenschwick": {
+      "name": "Oer-Erkenschwick",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2480,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 235
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "recklinghausen": {
+      "name": "Recklinghausen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1880,
+        "house": 2713,
+        "apartmentNew": 4470,
+        "samples": {
+          "apartment": 109,
+          "house": 23
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "waltrop": {
+      "name": "Waltrop",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2606,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 235
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "emsdetten": {
+      "name": "Emsdetten",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2274,
+        "house": 2132,
+        "apartmentNew": 3920,
+        "samples": {
+          "apartment": 13,
+          "house": 39
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "greven": {
+      "name": "Greven",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2385,
+        "house": 2728,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 15,
+          "house": 30
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hoerstel": {
+      "name": "Hörstel",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2186,
+        "apartmentNew": 3440,
+        "samples": {
+          "apartment": null,
+          "house": 12
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "ibbenbueren": {
+      "name": "Ibbenbüren",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2549,
+        "house": 2196,
+        "apartmentNew": 3950,
+        "samples": {
+          "apartment": 16,
+          "house": 33
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "lengerich": {
+      "name": "Lengerich",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2247,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 12
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "lotte": {
+      "name": "Lotte",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1856,
+        "house": null,
+        "apartmentNew": 3650,
+        "samples": {
+          "apartment": 14,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "neuenkirchen": {
+      "name": "Neuenkirchen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1987,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 11
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "recke": {
+      "name": "Recke",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1755,
+        "apartmentNew": 3990,
+        "samples": {
+          "apartment": null,
+          "house": 10
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "rheine": {
+      "name": "Rheine",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2273,
+        "house": 2063,
+        "apartmentNew": 3780,
+        "samples": {
+          "apartment": 41,
+          "house": 178
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "steinfurt": {
+      "name": "Steinfurt",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1701,
+        "apartmentNew": 3760,
+        "samples": {
+          "apartment": null,
+          "house": 27
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "ahlen": {
+      "name": "Ahlen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2156,
+        "house": 2017,
+        "apartmentNew": 4150,
+        "samples": {
+          "apartment": 20,
+          "house": 15
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "beckum": {
+      "name": "Beckum",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1825,
+        "house": 2004,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 26,
+          "house": 17
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "oelde": {
+      "name": "Oelde",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2192,
+        "house": null,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 22,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "telgte": {
+      "name": "Telgte",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2475,
+        "house": null,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 12,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "warendorf": {
+      "name": "Warendorf",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2438,
+        "house": 2512,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 17,
+          "house": 12
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "guetersloh": {
+      "name": "Gütersloh",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2410,
+        "house": 2762,
+        "apartmentNew": 4450,
+        "samples": {
+          "apartment": 74,
+          "house": 115
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hallewestf": {
+      "name": "Halle (Westf.)",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2246,
+        "apartmentNew": 4120,
+        "samples": {
+          "apartment": null,
+          "house": 36
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "harsewinkel": {
+      "name": "Harsewinkel",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2097,
+        "apartmentNew": 3890,
+        "samples": {
+          "apartment": null,
+          "house": 43
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "herzebrockclarholz": {
+      "name": "Herzebrock-Clarholz",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2504,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 14
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "langenberg": {
+      "name": "Langenberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2288,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "rhedawiedenbrueck": {
+      "name": "Rheda-Wiedenbrück",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2261,
+        "house": 2525,
+        "apartmentNew": 4710,
+        "samples": {
+          "apartment": 34,
+          "house": 47
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "rietberg": {
+      "name": "Rietberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2797,
+        "apartmentNew": 3730,
+        "samples": {
+          "apartment": null,
+          "house": 26
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "schlossholtestukenbrock": {
+      "name": "Schloß Holte-Stukenbrock",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2497,
+        "apartmentNew": 4120,
+        "samples": {
+          "apartment": null,
+          "house": 38
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "steinhagen": {
+      "name": "Steinhagen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2071,
+        "apartmentNew": 3720,
+        "samples": {
+          "apartment": null,
+          "house": 19
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "verl": {
+      "name": "Verl",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2913,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 31
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "versmold": {
+      "name": "Versmold",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1842,
+        "house": 2262,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 10,
+          "house": 18
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "buende": {
+      "name": "Bünde",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1662,
+        "house": 1704,
+        "apartmentNew": 3790,
+        "samples": {
+          "apartment": 54,
+          "house": 51
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "enger": {
+      "name": "Enger",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1964,
+        "house": 2098,
+        "apartmentNew": 3600,
+        "samples": {
+          "apartment": 20,
+          "house": 31
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "herford": {
+      "name": "Herford",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1938,
+        "house": 2011,
+        "apartmentNew": 3300,
+        "samples": {
+          "apartment": 51,
+          "house": 63
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hiddenhausen": {
+      "name": "Hiddenhausen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2030,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 26
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "loehne": {
+      "name": "Löhne",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1584,
+        "house": 1749,
+        "apartmentNew": 3190,
+        "samples": {
+          "apartment": 31,
+          "house": 67
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "spenge": {
+      "name": "Spenge",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1709,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 20
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "vlotho": {
+      "name": "Vlotho",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1651,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 20
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "baddriburg": {
+      "name": "Bad Driburg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1135,
+        "house": 1363,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 22,
+          "house": 32
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "beverungen": {
+      "name": "Beverungen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1175,
+        "house": 763,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 11,
+          "house": 24
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "brakel": {
+      "name": "Brakel",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 879,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 17
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hoexter": {
+      "name": "Höxter",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1294,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 50
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "nieheim": {
+      "name": "Nieheim",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 895,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 14
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "steinheim": {
+      "name": "Steinheim",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1200,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 12
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "warburg": {
+      "name": "Warburg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1266,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 49
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "willebadessen": {
+      "name": "Willebadessen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1086,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "badsalzuflen": {
+      "name": "Bad Salzuflen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1826,
+        "house": 2050,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 53,
+          "house": 91
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "blomberg": {
+      "name": "Blomberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1414,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 20
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "detmold": {
+      "name": "Detmold",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1725,
+        "house": 2191,
+        "apartmentNew": 4267,
+        "samples": {
+          "apartment": 46,
+          "house": 114
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "extertal": {
+      "name": "Extertal",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1250,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 11
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hornbadmeinberg": {
+      "name": "Horn-Bad Meinberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1215,
+        "house": 1997,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 19,
+          "house": 16
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kalletal": {
+      "name": "Kalletal",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1534,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 12
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "lage": {
+      "name": "Lage",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1381,
+        "house": 1841,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 21,
+          "house": 44
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "lemgo": {
+      "name": "Lemgo",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1906,
+        "house": 2002,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 20,
+          "house": 52
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "leopoldshoehe": {
+      "name": "Leopoldshöhe",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2298,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 20
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "luegde": {
+      "name": "Lügde",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1227,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 17
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "oerlinghausen": {
+      "name": "Oerlinghausen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1836,
+        "house": 2349,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 17,
+          "house": 29
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "schlangen": {
+      "name": "Schlangen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2075,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "minden": {
+      "name": "Minden",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1825,
+        "house": 1790,
+        "apartmentNew": 3465,
+        "samples": {
+          "apartment": 50,
+          "house": 95
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "altenbeken": {
+      "name": "Altenbeken",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1989,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 22
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "badlippspringe": {
+      "name": "Bad Lippspringe",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2148,
+        "house": 2600,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 35,
+          "house": 59
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "borchen": {
+      "name": "Borchen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2718,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 25
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "bueren": {
+      "name": "Büren",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1530,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 49
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "delbrueck": {
+      "name": "Delbrück",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2286,
+        "house": 2466,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 14,
+          "house": 71
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hoevelhof": {
+      "name": "Hövelhof",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2488,
+        "apartmentNew": 3690,
+        "samples": {
+          "apartment": null,
+          "house": 40
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "lichtenau": {
+      "name": "Lichtenau",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2665,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 10
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "paderborn": {
+      "name": "Paderborn",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2511,
+        "house": 1573,
+        "apartmentNew": 4484,
+        "samples": {
+          "apartment": 93,
+          "house": 110
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "salzkotten": {
+      "name": "Salzkotten",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2615,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 66
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "badwuennenberg": {
+      "name": "Bad Wünnenberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2148,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 15
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hagen": {
+      "name": "Hagen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1498,
+        "house": 2043,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 199,
+          "house": 123
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hamm": {
+      "name": "Hamm",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1764,
+        "house": 2280,
+        "apartmentNew": 4205,
+        "samples": {
+          "apartment": 99,
+          "house": 180
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "herne": {
+      "name": "Herne",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1556,
+        "house": 2581,
+        "apartmentNew": 3590,
+        "samples": {
+          "apartment": 133,
+          "house": 90
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "breckerfeld": {
+      "name": "Breckerfeld",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2536,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 14
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "ennepetal": {
+      "name": "Ennepetal",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1460,
+        "house": 2161,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 13,
+          "house": 31
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "gevelsberg": {
+      "name": "Gevelsberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1709,
+        "house": 2563,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 17,
+          "house": 26
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hattingen": {
+      "name": "Hattingen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2285,
+        "house": 2678,
+        "apartmentNew": 4660,
+        "samples": {
+          "apartment": 36,
+          "house": 39
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "herdecke": {
+      "name": "Herdecke",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2095,
+        "house": 2643,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 22,
+          "house": 14
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "schwelm": {
+      "name": "Schwelm",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1766,
+        "house": 2494,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 12,
+          "house": 20
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "sprockhoevel": {
+      "name": "Sprockhövel",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2612,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 23
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wetterruhr": {
+      "name": "Wetter (Ruhr)",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2403,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 18
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "witten": {
+      "name": "Witten",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1913,
+        "house": 2701,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 76,
+          "house": 64
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "arnsberg": {
+      "name": "Arnsberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1605,
+        "house": 1866,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 85,
+          "house": 174
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "brilon": {
+      "name": "Brilon",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2047,
+        "house": null,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 12,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "marsberg": {
+      "name": "Marsberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1132,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 10
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "meschede": {
+      "name": "Meschede",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1716,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 15
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "winterberg": {
+      "name": "Winterberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2078,
+        "house": null,
+        "apartmentNew": 3570,
+        "samples": {
+          "apartment": 20,
+          "house": null
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "altena": {
+      "name": "Altena",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1444,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 27
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "balve": {
+      "name": "Balve",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1365,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 16
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "halver": {
+      "name": "Halver",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1620,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 11
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hemer": {
+      "name": "Hemer",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1336,
+        "house": 1773,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 18,
+          "house": 39
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "iserlohn": {
+      "name": "Iserlohn",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1505,
+        "house": 2025,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 85,
+          "house": 127
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kierspe": {
+      "name": "Kierspe",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2292,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 11
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "luedenscheid": {
+      "name": "Lüdenscheid",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1724,
+        "house": 1856,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 147,
+          "house": 123
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "meinerzhagen": {
+      "name": "Meinerzhagen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1726,
+        "house": 1798,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 15,
+          "house": 12
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "mendensauerland": {
+      "name": "Menden (Sauerland)",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1732,
+        "house": 1900,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 20,
+          "house": 39
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "neuenrade": {
+      "name": "Neuenrade",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1699,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "plettenberg": {
+      "name": "Plettenberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1323,
+        "house": 1357,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 14,
+          "house": 27
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "werdohl": {
+      "name": "Werdohl",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1285,
+        "house": 1293,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 11,
+          "house": 16
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "attendorn": {
+      "name": "Attendorn",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1914,
+        "house": 2176,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 45,
+          "house": 37
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "drolshagen": {
+      "name": "Drolshagen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2053,
+        "house": 1802,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 18,
+          "house": 22
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "finnentrop": {
+      "name": "Finnentrop",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1248,
+        "house": 1597,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 18,
+          "house": 21
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kirchhundem": {
+      "name": "Kirchhundem",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1226,
+        "house": 1622,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 18,
+          "house": 29
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "lennestadt": {
+      "name": "Lennestadt",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1331,
+        "house": 1200,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 20,
+          "house": 38
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "olpe": {
+      "name": "Olpe",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2511,
+        "house": 2087,
+        "apartmentNew": 5280,
+        "samples": {
+          "apartment": 90,
+          "house": 56
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wenden": {
+      "name": "Wenden",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2279,
+        "house": 1854,
+        "apartmentNew": 4125,
+        "samples": {
+          "apartment": 14,
+          "house": 53
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "badberleburg": {
+      "name": "Bad Berleburg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1244,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "burbach": {
+      "name": "Burbach",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1496,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 12
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "freudenberg": {
+      "name": "Freudenberg",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1801,
+        "apartmentNew": 2810,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "hilchenbach": {
+      "name": "Hilchenbach",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1926,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 18
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kreuztal": {
+      "name": "Kreuztal",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1784,
+        "apartmentNew": 3990,
+        "samples": {
+          "apartment": null,
+          "house": 18
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "netphen": {
+      "name": "Netphen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1967,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 19
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "siegen": {
+      "name": "Siegen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1911,
+        "house": 1782,
+        "apartmentNew": 4190,
+        "samples": {
+          "apartment": 114,
+          "house": 349
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wilnsdorf": {
+      "name": "Wilnsdorf",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1716,
+        "apartmentNew": 3840,
+        "samples": {
+          "apartment": null,
+          "house": 16
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "badsassendorf": {
+      "name": "Bad Sassendorf",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1980,
+        "house": 2457,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 13,
+          "house": 19
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "erwitte": {
+      "name": "Erwitte",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2141,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 16
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "geseke": {
+      "name": "Geseke",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1935,
+        "apartmentNew": 3255,
+        "samples": {
+          "apartment": null,
+          "house": 21
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "lippstadt": {
+      "name": "Lippstadt",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2012,
+        "house": 2165,
+        "apartmentNew": 4044,
+        "samples": {
+          "apartment": 247,
+          "house": 86
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "moehnesee": {
+      "name": "Möhnesee",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2576,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 13
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "soest": {
+      "name": "Soest",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2312,
+        "house": 2603,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 46,
+          "house": 64
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "warstein": {
+      "name": "Warstein",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1332,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 49
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "welver": {
+      "name": "Welver",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2128,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 12
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "werl": {
+      "name": "Werl",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1765,
+        "house": 2250,
+        "apartmentNew": 3960,
+        "samples": {
+          "apartment": 18,
+          "house": 22
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "wickederuhr": {
+      "name": "Wickede (Ruhr)",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 1819,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 11
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "bergkamen": {
+      "name": "Bergkamen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1498,
+        "house": 2147,
+        "apartmentNew": 3110,
+        "samples": {
+          "apartment": 26,
+          "house": 152
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "boenen": {
+      "name": "Bönen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1448,
+        "house": 2063,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 19,
+          "house": 32
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "froendenbergruhr": {
+      "name": "Fröndenberg/Ruhr",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1595,
+        "house": 2465,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 16,
+          "house": 61
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "holzwickede": {
+      "name": "Holzwickede",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1995,
+        "house": 2956,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 24,
+          "house": 32
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "kamen": {
+      "name": "Kamen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1571,
+        "house": 2167,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 33,
+          "house": 119
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "luenen": {
+      "name": "Lünen",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2167,
+        "house": 2278,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 91,
+          "house": 145
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "schwerte": {
+      "name": "Schwerte",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1823,
+        "house": 2582,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 56,
+          "house": 72
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "selm": {
+      "name": "Selm",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": null,
+        "house": 2061,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": null,
+          "house": 69
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "unna": {
+      "name": "Unna",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 1904,
+        "house": 2253,
+        "apartmentNew": 3990,
+        "samples": {
+          "apartment": 77,
+          "house": 162
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
+    },
+    "werne": {
+      "name": "Werne",
+      "state": "NW",
+      "listing": null,
+      "listingSource": null,
+      "official": {
+        "apartment": 2664,
+        "house": 2345,
+        "apartmentNew": null,
+        "samples": {
+          "apartment": 30,
+          "house": 73
+        },
+        "year": "2024"
+      },
+      "officialSource": "Gutachterausschüsse NRW, Grundstücksmarktdaten (open data, dl-zero-de/2.0, opengeodata.nrw.de)"
     }
   },
   "states": {
