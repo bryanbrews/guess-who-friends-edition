@@ -1,5 +1,5 @@
-// build_dataset.mjs — merge the immopreis data sources into the dataset the
-// frontend ships with (immopreis/data/market.json).
+// build_dataset.mjs — merge the gillow data sources into the dataset the
+// frontend ships with (gillow/data/market.json).
 //
 // Inputs, in ascending priority (later overrides earlier, city by city):
 //   sources/listings_seed.json   hand-curated asking prices (always present)
@@ -11,7 +11,7 @@
 //                                municipalities; also adds official-only
 //                                cities that have no listing seed
 //
-// Usage: node scripts/immopreis/build_dataset.mjs
+// Usage: node scripts/gillow/build_dataset.mjs
 
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -19,7 +19,7 @@ import path from "node:path";
 
 const HERE = import.meta.dirname;
 const ROOT = path.resolve(HERE, "..", "..");
-const OUT = path.join(ROOT, "immopreis", "data", "market.json");
+const OUT = path.join(ROOT, "gillow", "data", "market.json");
 
 async function readJson(file) {
   return JSON.parse(await readFile(file, "utf8"));
