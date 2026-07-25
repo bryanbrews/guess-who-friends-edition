@@ -123,6 +123,12 @@ your own set.
 Every question is strictly qualitative — the format itself enforces the
 "nothing physical" rule. Players can also type their own yes/no question.
 
+## Also on this site
+
+- [`immopreis/`](immopreis/README.md) — **ImmoPreis**, a German property price
+  estimator that blends official Gutachterausschuss transaction data with
+  listing asking prices. Served at `/immopreis/`.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).

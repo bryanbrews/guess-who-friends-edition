@@ -1,0 +1,22 @@
+{
+  "comment": "Seed figures anchored to official transaction data: the Gutachterausschüsse (local appraisal committees) publish yearly Immobilienmarktberichte with average purchase prices from the Kaufpreissammlung (the register of all notarized sales). These are approximate values read from the latest public market reports — refresh via fetch_official.mjs, which writes official.json and overrides this file.",
+  "vintage": "2024 market reports",
+  "approximate": true,
+  "cities": {
+    "berlin":      { "apartment": 4700, "source": "Gutachterausschuss Berlin, Immobilienmarktbericht (gutachterausschuss-berlin.de)" },
+    "hamburg":     { "apartment": 5300, "source": "Gutachterausschuss Hamburg, Immobilienmarktbericht (hamburg.de/gutachterausschuss)" },
+    "muenchen":    { "apartment": 7900, "source": "Gutachterausschuss München, Jahresbericht (muenchen.de/gutachterausschuss)" },
+    "frankfurt":   { "apartment": 5000, "source": "Gutachterausschuss Frankfurt am Main, Immobilienmarktbericht" },
+    "koeln":       { "apartment": 4300, "source": "Gutachterausschuss Köln via BORIS-NRW (boris.nrw.de)" },
+    "duesseldorf": { "apartment": 4300, "source": "Gutachterausschuss Düsseldorf via BORIS-NRW (boris.nrw.de)" },
+    "stuttgart":   { "apartment": 4700, "source": "Gutachterausschuss Stuttgart, Immobilienmarktbericht" },
+    "leipzig":     { "apartment": 2500, "source": "Gutachterausschuss Leipzig, Grundstücksmarktbericht" },
+    "dresden":     { "apartment": 2600, "source": "Gutachterausschuss Dresden, Grundstücksmarktbericht" },
+    "hannover":    { "apartment": 3100, "source": "Gutachterausschuss Hameln-Hannover, Grundstücksmarktbericht (immobilienmarkt.niedersachsen.de)" }
+  },
+  "index": {
+    "comment": "National price trend used as the year-over-year drift, from the Destatis Häuserpreisindex (table 61262-0001). Refreshable via fetch_official.mjs with a GENESIS API token.",
+    "yoy": 0.02,
+    "source": "Statistisches Bundesamt (Destatis), Häuserpreisindex"
+  }
+}
