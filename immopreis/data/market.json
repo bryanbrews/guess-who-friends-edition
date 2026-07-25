@@ -1,0 +1,673 @@
+{
+  "generated": "2026-07-25",
+  "vintage": "2025-H1",
+  "params": {
+    "askingDiscount": 0.06,
+    "newBuildFactor": 1.28,
+    "yoy": 0.02
+  },
+  "notes": {
+    "listings": "Seed asking-price data (EUR per m2, existing stock) per city, approximate 2025-H1 market level. Values are hand-curated placeholders — refresh with real feeds via fetch_listings.mjs, which writes listings.json and overrides this file city-by-city.",
+    "official": "Seed figures anchored to official transaction data: the Gutachterausschüsse (local appraisal committees) publish yearly Immobilienmarktberichte with average purchase prices from the Kaufpreissammlung (the register of all notarized sales). These are approximate values read from the latest public market reports — refresh via fetch_official.mjs, which writes official.json and overrides this file.",
+    "trend": "Statistisches Bundesamt (Destatis), Häuserpreisindex"
+  },
+  "cities": {
+    "muenchen": {
+      "name": "München",
+      "state": "BY",
+      "listing": {
+        "apartment": 8100,
+        "house": 8900
+      },
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 7900,
+        "house": null
+      },
+      "officialSource": "Gutachterausschuss München, Jahresbericht (muenchen.de/gutachterausschuss)"
+    },
+    "berlin": {
+      "name": "Berlin",
+      "state": "BE",
+      "listing": {
+        "apartment": 5000,
+        "house": 4600
+      },
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 4700,
+        "house": null
+      },
+      "officialSource": "Gutachterausschuss Berlin, Immobilienmarktbericht (gutachterausschuss-berlin.de)"
+    },
+    "hamburg": {
+      "name": "Hamburg",
+      "state": "HH",
+      "listing": {
+        "apartment": 5800,
+        "house": 4900
+      },
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 5300,
+        "house": null
+      },
+      "officialSource": "Gutachterausschuss Hamburg, Immobilienmarktbericht (hamburg.de/gutachterausschuss)"
+    },
+    "frankfurt": {
+      "name": "Frankfurt am Main",
+      "state": "HE",
+      "listing": {
+        "apartment": 5300,
+        "house": 5300
+      },
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 5000,
+        "house": null
+      },
+      "officialSource": "Gutachterausschuss Frankfurt am Main, Immobilienmarktbericht"
+    },
+    "stuttgart": {
+      "name": "Stuttgart",
+      "state": "BW",
+      "listing": {
+        "apartment": 5000,
+        "house": 5400
+      },
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 4700,
+        "house": null
+      },
+      "officialSource": "Gutachterausschuss Stuttgart, Immobilienmarktbericht"
+    },
+    "duesseldorf": {
+      "name": "Düsseldorf",
+      "state": "NW",
+      "listing": {
+        "apartment": 4700,
+        "house": 4900
+      },
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 4300,
+        "house": null
+      },
+      "officialSource": "Gutachterausschuss Düsseldorf via BORIS-NRW (boris.nrw.de)"
+    },
+    "koeln": {
+      "name": "Köln",
+      "state": "NW",
+      "listing": {
+        "apartment": 4700,
+        "house": 4600
+      },
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 4300,
+        "house": null
+      },
+      "officialSource": "Gutachterausschuss Köln via BORIS-NRW (boris.nrw.de)"
+    },
+    "bonn": {
+      "name": "Bonn",
+      "state": "NW",
+      "listing": {
+        "apartment": 4100,
+        "house": 4000
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "muenster": {
+      "name": "Münster",
+      "state": "NW",
+      "listing": {
+        "apartment": 4200,
+        "house": 3900
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "aachen": {
+      "name": "Aachen",
+      "state": "NW",
+      "listing": {
+        "apartment": 3300,
+        "house": 3200
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "bielefeld": {
+      "name": "Bielefeld",
+      "state": "NW",
+      "listing": {
+        "apartment": 2800,
+        "house": 2900
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "essen": {
+      "name": "Essen",
+      "state": "NW",
+      "listing": {
+        "apartment": 2500,
+        "house": 2900
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "dortmund": {
+      "name": "Dortmund",
+      "state": "NW",
+      "listing": {
+        "apartment": 2500,
+        "house": 2800
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "bochum": {
+      "name": "Bochum",
+      "state": "NW",
+      "listing": {
+        "apartment": 2400,
+        "house": 2700
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "wuppertal": {
+      "name": "Wuppertal",
+      "state": "NW",
+      "listing": {
+        "apartment": 2300,
+        "house": 2600
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "duisburg": {
+      "name": "Duisburg",
+      "state": "NW",
+      "listing": {
+        "apartment": 1900,
+        "house": 2300
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "leipzig": {
+      "name": "Leipzig",
+      "state": "SN",
+      "listing": {
+        "apartment": 2700,
+        "house": 2900
+      },
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 2500,
+        "house": null
+      },
+      "officialSource": "Gutachterausschuss Leipzig, Grundstücksmarktbericht"
+    },
+    "dresden": {
+      "name": "Dresden",
+      "state": "SN",
+      "listing": {
+        "apartment": 2900,
+        "house": 3100
+      },
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 2600,
+        "house": null
+      },
+      "officialSource": "Gutachterausschuss Dresden, Grundstücksmarktbericht"
+    },
+    "chemnitz": {
+      "name": "Chemnitz",
+      "state": "SN",
+      "listing": {
+        "apartment": 1600,
+        "house": 2000
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "bremen": {
+      "name": "Bremen",
+      "state": "HB",
+      "listing": {
+        "apartment": 3100,
+        "house": 3200
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "hannover": {
+      "name": "Hannover",
+      "state": "NI",
+      "listing": {
+        "apartment": 3400,
+        "house": 3500
+      },
+      "listingSource": "seed (approximate)",
+      "official": {
+        "apartment": 3100,
+        "house": null
+      },
+      "officialSource": "Gutachterausschuss Hameln-Hannover, Grundstücksmarktbericht (immobilienmarkt.niedersachsen.de)"
+    },
+    "braunschweig": {
+      "name": "Braunschweig",
+      "state": "NI",
+      "listing": {
+        "apartment": 3000,
+        "house": 3100
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "oldenburg": {
+      "name": "Oldenburg",
+      "state": "NI",
+      "listing": {
+        "apartment": 3300,
+        "house": 3400
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "osnabrueck": {
+      "name": "Osnabrück",
+      "state": "NI",
+      "listing": {
+        "apartment": 2900,
+        "house": 3000
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "nuernberg": {
+      "name": "Nürnberg",
+      "state": "BY",
+      "listing": {
+        "apartment": 3900,
+        "house": 4400
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "augsburg": {
+      "name": "Augsburg",
+      "state": "BY",
+      "listing": {
+        "apartment": 4200,
+        "house": 4700
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "regensburg": {
+      "name": "Regensburg",
+      "state": "BY",
+      "listing": {
+        "apartment": 4700,
+        "house": 5000
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "wuerzburg": {
+      "name": "Würzburg",
+      "state": "BY",
+      "listing": {
+        "apartment": 4000,
+        "house": 4500
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "ingolstadt": {
+      "name": "Ingolstadt",
+      "state": "BY",
+      "listing": {
+        "apartment": 4300,
+        "house": 4800
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "erlangen": {
+      "name": "Erlangen",
+      "state": "BY",
+      "listing": {
+        "apartment": 4600,
+        "house": 5200
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "fuerth": {
+      "name": "Fürth",
+      "state": "BY",
+      "listing": {
+        "apartment": 3700,
+        "house": 4300
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "karlsruhe": {
+      "name": "Karlsruhe",
+      "state": "BW",
+      "listing": {
+        "apartment": 4000,
+        "house": 4300
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "mannheim": {
+      "name": "Mannheim",
+      "state": "BW",
+      "listing": {
+        "apartment": 3700,
+        "house": 4000
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "freiburg": {
+      "name": "Freiburg im Breisgau",
+      "state": "BW",
+      "listing": {
+        "apartment": 5300,
+        "house": 5700
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "heidelberg": {
+      "name": "Heidelberg",
+      "state": "BW",
+      "listing": {
+        "apartment": 5000,
+        "house": 5400
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "ulm": {
+      "name": "Ulm",
+      "state": "BW",
+      "listing": {
+        "apartment": 4300,
+        "house": 4600
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "wiesbaden": {
+      "name": "Wiesbaden",
+      "state": "HE",
+      "listing": {
+        "apartment": 4300,
+        "house": 4700
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "darmstadt": {
+      "name": "Darmstadt",
+      "state": "HE",
+      "listing": {
+        "apartment": 4400,
+        "house": 4600
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "kassel": {
+      "name": "Kassel",
+      "state": "HE",
+      "listing": {
+        "apartment": 2700,
+        "house": 2900
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "mainz": {
+      "name": "Mainz",
+      "state": "RP",
+      "listing": {
+        "apartment": 4400,
+        "house": 4500
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "koblenz": {
+      "name": "Koblenz",
+      "state": "RP",
+      "listing": {
+        "apartment": 3200,
+        "house": 3300
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "trier": {
+      "name": "Trier",
+      "state": "RP",
+      "listing": {
+        "apartment": 3400,
+        "house": 3500
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "ludwigshafen": {
+      "name": "Ludwigshafen am Rhein",
+      "state": "RP",
+      "listing": {
+        "apartment": 2900,
+        "house": 3200
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "saarbruecken": {
+      "name": "Saarbrücken",
+      "state": "SL",
+      "listing": {
+        "apartment": 2500,
+        "house": 2700
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "kiel": {
+      "name": "Kiel",
+      "state": "SH",
+      "listing": {
+        "apartment": 3300,
+        "house": 3400
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "luebeck": {
+      "name": "Lübeck",
+      "state": "SH",
+      "listing": {
+        "apartment": 3400,
+        "house": 3500
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "rostock": {
+      "name": "Rostock",
+      "state": "MV",
+      "listing": {
+        "apartment": 3400,
+        "house": 3300
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "schwerin": {
+      "name": "Schwerin",
+      "state": "MV",
+      "listing": {
+        "apartment": 2600,
+        "house": 2800
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "magdeburg": {
+      "name": "Magdeburg",
+      "state": "ST",
+      "listing": {
+        "apartment": 2200,
+        "house": 2400
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "halle": {
+      "name": "Halle (Saale)",
+      "state": "ST",
+      "listing": {
+        "apartment": 2100,
+        "house": 2300
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "erfurt": {
+      "name": "Erfurt",
+      "state": "TH",
+      "listing": {
+        "apartment": 2700,
+        "house": 2800
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "jena": {
+      "name": "Jena",
+      "state": "TH",
+      "listing": {
+        "apartment": 3000,
+        "house": 3100
+      },
+      "listingSource": "seed (approximate)"
+    },
+    "potsdam": {
+      "name": "Potsdam",
+      "state": "BB",
+      "listing": {
+        "apartment": 4900,
+        "house": 4700
+      },
+      "listingSource": "seed (approximate)"
+    }
+  },
+  "states": {
+    "BW": {
+      "name": "Baden-Württemberg",
+      "listing": {
+        "apartment": 3400,
+        "house": 3600
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "BY": {
+      "name": "Bayern",
+      "listing": {
+        "apartment": 3600,
+        "house": 3900
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "BE": {
+      "name": "Berlin",
+      "listing": {
+        "apartment": 5000,
+        "house": 4600
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "BB": {
+      "name": "Brandenburg",
+      "listing": {
+        "apartment": 2600,
+        "house": 2500
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "HB": {
+      "name": "Bremen",
+      "listing": {
+        "apartment": 3000,
+        "house": 3100
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "HH": {
+      "name": "Hamburg",
+      "listing": {
+        "apartment": 5800,
+        "house": 4900
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "HE": {
+      "name": "Hessen",
+      "listing": {
+        "apartment": 3300,
+        "house": 3400
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "MV": {
+      "name": "Mecklenburg-Vorpommern",
+      "listing": {
+        "apartment": 2800,
+        "house": 2600
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "NI": {
+      "name": "Niedersachsen",
+      "listing": {
+        "apartment": 2600,
+        "house": 2800
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "NW": {
+      "name": "Nordrhein-Westfalen",
+      "listing": {
+        "apartment": 2700,
+        "house": 2900
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "RP": {
+      "name": "Rheinland-Pfalz",
+      "listing": {
+        "apartment": 2800,
+        "house": 2900
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "SL": {
+      "name": "Saarland",
+      "listing": {
+        "apartment": 2100,
+        "house": 2300
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "SN": {
+      "name": "Sachsen",
+      "listing": {
+        "apartment": 2200,
+        "house": 2400
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "ST": {
+      "name": "Sachsen-Anhalt",
+      "listing": {
+        "apartment": 1800,
+        "house": 1900
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "SH": {
+      "name": "Schleswig-Holstein",
+      "listing": {
+        "apartment": 3000,
+        "house": 3000
+      },
+      "listingSource": "seed (approximate state average)"
+    },
+    "TH": {
+      "name": "Thüringen",
+      "listing": {
+        "apartment": 2100,
+        "house": 2200
+      },
+      "listingSource": "seed (approximate state average)"
+    }
+  }
+}
