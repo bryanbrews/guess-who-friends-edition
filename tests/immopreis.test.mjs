@@ -8,11 +8,11 @@ import {
   sizeFactor,
   yearFactor,
   resolveArea,
-} from "../gillow/estimator.js";
+} from "../immopreis/estimator.js";
 
 const market = JSON.parse(
   await readFile(
-    path.join(import.meta.dirname, "..", "gillow", "data", "market.json"),
+    path.join(import.meta.dirname, "..", "immopreis", "data", "market.json"),
     "utf8"
   )
 );

@@ -125,9 +125,9 @@ Every question is strictly qualitative — the format itself enforces the
 
 ## Also on this site
 
-- [`gillow/`](gillow/README.md) — **Gillow**, the German Zillow: a property
-  price estimator that blends official Gutachterausschuss transaction data
-  with listing asking prices. Served at `/gillow/`.
+- [`immopreis/`](immopreis/README.md) — **ImmoPreis**, a German property price
+  estimator that blends official Gutachterausschuss transaction data with
+  listing asking prices. Served at `/immopreis/`.
 
 ## License
 

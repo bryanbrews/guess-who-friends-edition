@@ -20,7 +20,7 @@
 //       { "type": "json-url", "url": "https://…", "map": "…see mapJsonRecords…" }
 //   ] }
 //
-// Usage: node scripts/gillow/fetch_listings.mjs
+// Usage: node scripts/immopreis/fetch_listings.mjs
 
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -29,7 +29,7 @@ import path from "node:path";
 const HERE = import.meta.dirname;
 const CONFIG = path.join(HERE, "sources", "listings_feeds.json");
 const OUT = path.join(HERE, "sources", "listings.json");
-const USER_AGENT = "gillow-aggregator/1.0 (+https://pacbrewlab.com/gillow/)";
+const USER_AGENT = "immopreis-aggregator/1.0 (+https://pacbrewlab.com/immopreis/)";
 
 const slug = (name) =>
   name
@@ -199,4 +199,4 @@ await writeFile(
   JSON.stringify({ generatedAt: new Date().toISOString(), cities }, null, 2) + "\n"
 );
 console.log(`wrote sources/listings.json — ${Object.keys(cities).length} cities with enough samples`);
-console.log("Now run: node scripts/gillow/build_dataset.mjs");
+console.log("Now run: node scripts/immopreis/build_dataset.mjs");
